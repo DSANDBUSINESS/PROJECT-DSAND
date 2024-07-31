@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background-color: #282c34;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: #61dafb;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #21a1f1;
+        }
+        main {
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        p {
+            color: #555;
+            line-height: 1.6;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: 20px auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="email"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #61dafb;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #21a1f1;
+        }
+        video {
+            display: block;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .gallery {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .gallery img {
+            margin: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        footer {
+            background-color: #282c34;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        footer p {
+            margin: 5px 0;
+        }
+
+        /* Accordion Section */
+        details {
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+
+        details summary {
+            font-weight: bold;
+            cursor: pointer;
+            padding: 10px;
+            background: #f4f4f4;
+            border-radius: 5px;
+        }
+
+        details p {
+            margin: 10px 0 0;
+            padding: 10px;
+            background: #fafafa;
+            border-radius: 5px;
+        }
+
+        /* Tabs Section */
+        .tabs {
+            background: #fff;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .tab-button {
+            background: #61dafb;
+            color: white;
+            border: none;
+            padding: 15px;
+            cursor: pointer;
+            display: inline-block;
+            width: 50%;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .tab-button.active {
+            background: #21a1f1;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 20px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Carousel Section */
+        .carousel {
+            position: relative;
+            max-width: 600px;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .carousel-item {
+            display: none;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        .carousel-prev, .carousel-next {
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+            cursor: pointer;
+            border-radius: 50%;
+            background: rgba(0,0,0,0.5);
+            user-select: none;
+            transition: background 0.3s ease;
+        }
+
+        .carousel-prev:hover, .carousel-next:hover {
+            background: rgba(0,0,0,0.8);
+        }
+
+        .carousel-prev {
+            left: 10px;
+        }
+
+        .carousel-next {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#gambar">Gambar</a></li>
+                <li><a href="#form">Form</a></li>
+                <li><a href="#tabel">Tabel</a></li>
+                <li><a href="#konten">Konten</a></li>
+                <li><a href="#video">Video</a></li>
+                <li><a href="#galeri">Galeri</a></li>
+                <li><a href="#accordion">Accordion</a></li>
+                <li><a href="#tabs">Tabs</a></li>
+                <li><a href="#carousel">Carousel</a></li>
+            </ul>
+        </nav>
+    </header>
+    <br>
+    <main>
+        <div id="home">
+            <h1>Dsands Web</h1>
+            <p>Selamat datang di DSands Web Latihan! Tempat ideal untuk mengasah keterampilan web Anda dan menciptakan proyek yang keren. Ayo, eksplorasi dan kembangkan kreativitas Anda bersama kami!</p>
+        </div>
+        <br>
+        <div id="gambar">
+            <h2>Gambar</h2> 
+            <img width="200" height="200" src="https://i.ibb.co.com/5R7GJ9R/Dsands.jpg" alt="Gambar Contoh">
+        </div>
+        <br>
+        <div id="tabel">
+            <h2>Tabel</h2>
+            <table>
+                <tr>
+                    <th>BIODATA</th>
+                    <th>KEAHLIAN</th>
+                    <th>CONTACT</th>
+                </tr>
+                <tr>
+                    <td>MUHAMMAD IKHSANI SETIAWAN</td>
+                    <td>PROGAMMER</td>
+                    <td>WA : 0821 - 1267 - 5512</td>
+                    </td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>XI RPL 2</td>
+                    <td>UI/UX</td>
+                    <td>IG : @zxsan_</td>
+                </tr>
+            </table>
+        </div>
+        <br>
+        <div id="konten">
+            <h2>Konten</h2>
+            <p>Ini adalah konten tambahan yang dapat berisi berbagai informasi menarik lainnya. Konten ini bisa berupa teks, gambar, atau elemen lainnya yang relevan dengan halaman.</p>
+        </div>
+        <br>
+        <div id="form">
+            <h2>Form</h2>
+            <form>
+                <label for="name">Nama:</label>
+                <input type="text" id="name" name="name"><br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email"><br><br>
+                <button type="submit">Kirim</button>
+            </form>
+        </div>
+        <br>
+        <div id="video">
+            <h2>Video</h2>
+            <iframe width="320" height="240" src="https://www.youtube.com/embed/qF0PdgefNMY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <br>
+        <div id="galeri">
+            <h2>Galeri</h2>
+            <div class="gallery">
+                <img width="200" height="200" src="https://i.ibb.co.com/4gf8gtd/LOGO-SMKN-17-JAKARTA-removebg-preview.png/200x100" alt="Gambar 1">
+                <img width="200" height="200" src="https://i.ibb.co.com/1Kg5Vbr/Hutao-removebg-preview.png/200x100" alt="Gambar 2">
+                <img width="200" height="200" src="https://i.ibb.co.com/cxWKgqv/Remove-Dsands-removebg-preview-1.png/200x100" alt="Gambar 3">
+            </div>
+        </div>
+        <br>
+        <div id="accordion">
+            <h2>Accordion</h2>
+            <details>
+                <summary>Section 1: Pengenalan</summary>
+                <p>Selamat datang di bagian pertama dari accordion ini. Di sini, kita akan membahas pengenalan dasar tentang topik yang akan dibahas. Anda akan menemukan informasi penting yang akan membantu Anda memahami konteks sebelum melanjutkan ke bagian-bagian berikutnya.</p>
+                <ul>
+                    <li>Definisi dan tujuan</li>
+                    <li>Sejarah singkat</li>
+                    <li>Manfaat utama</li>
+                </ul>
+            </details>
+            <details>
+                <summary>Section 2: Panduan Langkah-demi-Langkah</summary>
+                <p>Bagian ini akan memberikan panduan langkah-demi-langkah untuk melakukan aktivitas tertentu. Ikuti langkah-langkah berikut untuk mendapatkan hasil yang diinginkan:</p>
+                <ol>
+                    <li>Langkah pertama: Persiapan awal</li>
+                    <li>Langkah kedua: Pelaksanaan aktivitas</li>
+                    <li>Langkah ketiga: Evaluasi dan penyesuaian</li>
+                </ol>
+                <p>Dengan mengikuti panduan ini, Anda akan bisa menguasai proses dengan lebih mudah dan efisien.</p>
+            </details>
+            <details>
+                <summary>Section 3: Tips dan Trik</summary>
+                <p>Di bagian ini, kami akan membagikan beberapa tips dan trik berguna yang dapat membantu Anda meningkatkan keterampilan dan efisiensi dalam topik ini:</p>
+                <ul>
+                    <li><strong>Tip 1:</strong> Gunakan alat yang tepat untuk pekerjaan yang tepat.</li>
+                    <li><strong>Tip 2:</strong> Jangan ragu untuk mencari bantuan jika diperlukan.</li>
+                    <li><strong>Tip 3:</strong> Teruslah berlatih dan eksperimen untuk meningkatkan keterampilan Anda.</li>
+                </ul>
+                <p>Dengan menerapkan tips ini, Anda dapat mencapai hasil yang lebih baik dan lebih cepat.</p>
+            </details>
+        </div>        
+        <br>
+        <div id="tabs">
+            <h2>Tabs</h2>
+            <div class="tabs">
+                <div class="tab-button active" onclick="openTab(event, 'tab1')">Tab 1: Pengenalan</div>
+                <div class="tab-button" onclick="openTab(event, 'tab2')">Tab 2: Panduan</div>
+                <div class="tab-button" onclick="openTab(event, 'tab3')">Tab 3: Tips & Trik</div>
+            </div>
+            <div id="tab1" class="tab-content active">
+                <h3>Pengenalan</h3>
+                <p>Selamat datang di bagian pengenalan! Di sini, Anda akan menemukan informasi dasar mengenai topik yang dibahas. Bagian ini bertujuan untuk memberikan gambaran umum sehingga Anda bisa lebih memahami konteks dan manfaatnya.</p>
+                <ul>
+                    <li><strong>Tujuan:</strong> Menjelaskan konsep dasar.</li>
+                    <li><strong>Manfaat:</strong> Memahami dasar sebelum mendalami lebih lanjut.</li>
+                    <li><strong>Konten:</strong> Sejarah, definisi, dan aplikasi praktis.</li>
+                </ul>
+            </div>
+            <div id="tab2" class="tab-content">
+                <h3>Panduan Langkah-demi-Langkah</h3>
+                <p>Di sini, kami akan memberikan panduan terperinci tentang bagaimana melaksanakan proses atau kegiatan tertentu. Ikuti langkah-langkah berikut untuk hasil yang optimal:</p>
+                <ol>
+                    <li><strong>Langkah 1:</strong> Persiapan awal dan pengumpulan bahan.</li>
+                    <li><strong>Langkah 2:</strong> Pelaksanaan proses dengan langkah-langkah spesifik.</li>
+                    <li><strong>Langkah 3:</strong> Evaluasi dan revisi untuk perbaikan.</li>
+                </ol>
+                <p>Ikuti panduan ini untuk memastikan bahwa Anda melakukan setiap langkah dengan benar dan efisien.</p>
+            </div>
+            <div id="tab3" class="tab-content">
+                <h3>Tips & Trik</h3>
+                <p>Untuk meningkatkan hasil dan efisiensi, berikut adalah beberapa tips dan trik yang berguna:</p>
+                <ul>
+                    <li><strong>Tip 1:</strong> Selalu rencanakan sebelum memulai untuk menghindari kesalahan.</li>
+                    <li><strong>Tip 2:</strong> Gunakan alat dan sumber daya yang tepat untuk mendukung proses Anda.</li>
+                    <li><strong>Tip 3:</strong> Jangan takut untuk meminta umpan balik dan belajar dari pengalaman.</li>
+                </ul>
+                <p>Dengan menerapkan tips ini, Anda akan menemukan cara-cara baru untuk menyederhanakan proses dan mencapai hasil yang lebih baik.</p>
+            </div>
+        </div>        
+        </div>
+        <br>
+        <div id="carousel">
+            <h2>Carousel</h2>
+            <div class="carousel">
+                <div class="carousel-item">
+                    <img src="https://i.ibb.co.com/4gf8gtd/LOGO-SMKN-17-JAKARTA-removebg-preview.png/3 00x300" alt="Slide 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://i.ibb.co.com/1Kg5Vbr/Hutao-removebg-preview.png/300x300" alt="Slide 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://i.ibb.co.com/cxWKgqv/Remove-Dsands-removebg-preview-1.png/300x300" alt="Slide 3">
+                </div>
+                <a class="carousel-prev">&#10094;</a>
+                <a class="carousel-next">&#10095;</a>
+            </div>
+        </div>
+    </main>
+    <br>
+    <footer>
+        <p>&copy; Dsands Web.</p>
+        <p>Contact: dsands@gmail.com</p>
+    </footer>
+
+    <script>
+        // Tabs functionality
+        function openTab(evt, tabId) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabId).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Carousel functionality
+        let index = 0;
+        function showSlides() {
+            let slides = document.getElementsByClassName("carousel-item");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            index++;
+            if (index > slides.length) { index = 1 }
+            slides[index-1].style.display = "block";
+            setTimeout(showSlides, 3000); // Change image every 3 seconds
+        }
+        showSlides();
+
+        // Carousel controls
+        document.querySelector(".carousel-prev").onclick = function() {
+            index -= 2;
+            showSlides();
+        };
+        document.querySelector(".carousel-next").onclick = function() {
+            showSlides();
+        };
+    </script>
+</body>
+</html>
